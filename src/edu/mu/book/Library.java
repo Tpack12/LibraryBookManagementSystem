@@ -21,6 +21,22 @@ public class Library {
 			System.out.println("Library is full! Cannot add more books.");
 		}
 	}
+	public boolean removeBook(Book book) {
+        for (int i = 0; i < count; i++) {
+            if (books[i].equals(book)) {
+                // Shift books to the left
+                for (int j = i; j < count - 1; j++) {
+                    books[j] = books[j + 1];
+                }
+                books[count - 1] = null; // Clear last spot
+                count--;
+                return true;
+            }
+        }
+        return false; // Book not found
+    }
+	
+	
 	
 	//Method to search for a book by ISBN
 
