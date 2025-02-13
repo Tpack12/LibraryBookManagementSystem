@@ -38,15 +38,15 @@ public class Library {
         return false; //Book not found
     }
 	
-	//Method to search for a book by ISBN
 	public Book searchByISBN(String ISBN) {
-		for (int i = 0; i < count; i++) {
-			if (book[i].getISBN().equals(ISBN)) {
-				return books[i];
-			}
-		}
-		return null; //Book not found
+	    for (int i = 0; i < count; i++) {
+	        if (books[i].getISBN().equals(ISBN)) { // Fixed "book" to "books"
+	            return books[i];
+	        }
+	    }
+	    return null; // Book not found
 	}
+
 	
 	//Method to display books
 	public void displayBooks() {
